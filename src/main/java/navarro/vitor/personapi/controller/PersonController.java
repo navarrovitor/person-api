@@ -1,8 +1,10 @@
 package navarro.vitor.personapi.controller;
 
+import navarro.vitor.personapi.dto.request.PersonDTO;
 import navarro.vitor.personapi.dto.response.MessageResponseDTO;
-import navarro.vitor.personapi.entity.Person;
 import navarro.vitor.personapi.service.PersonService;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,8 +23,8 @@ public class PersonController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public MessageResponseDTO createPerson(@RequestBody Person person) {
-    return personService.createPerson(person);
+  public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
+    return personService.createPerson(personDTO);
   }
 
 }
