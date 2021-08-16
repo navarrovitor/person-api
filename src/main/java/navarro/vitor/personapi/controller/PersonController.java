@@ -2,6 +2,7 @@ package navarro.vitor.personapi.controller;
 
 import navarro.vitor.personapi.dto.request.PersonDTO;
 import navarro.vitor.personapi.dto.response.MessageResponseDTO;
+import navarro.vitor.personapi.exception.PersonNotFoundException;
 import navarro.vitor.personapi.service.PersonService;
 
 import java.util.List;
@@ -32,6 +33,11 @@ public class PersonController {
   @GetMapping
   public List<PersonDTO> listAll() {
     return personService.listAll();
+  }
+
+  @GetMapping("/{id}")
+  public PersonDTO findById(@PathVariable Long id) throws PersonNotFoundException {
+    return personService.findById(id);
   }
 
 }
