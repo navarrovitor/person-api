@@ -4,6 +4,8 @@ import navarro.vitor.personapi.dto.request.PersonDTO;
 import navarro.vitor.personapi.dto.response.MessageResponseDTO;
 import navarro.vitor.personapi.service.PersonService;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,11 @@ public class PersonController {
   @ResponseStatus(HttpStatus.CREATED)
   public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
     return personService.createPerson(personDTO);
+  }
+
+  @GetMapping
+  public List<PersonDTO> listAll() {
+    return personService.listAll();
   }
 
 }
