@@ -15,7 +15,7 @@ public class PersonUtils {
     public static final LocalDate BIRTH_DATE = LocalDate.of(2010, 10, 1);
 
     public static PersonDTO createFakeDTO() {
-        return PersonDTO.builder().firstName(FIRST_NAME).lastName(LAST_NAME).ssn(SSN_NUMBER).birthDate("2010-04-04")
+        return PersonDTO.builder().firstName(FIRST_NAME).lastName(LAST_NAME).ssn(SSN_NUMBER).birthDate("2000-06-29")
                 .phones(Collections.singletonList(PhoneUtils.createFakeDTO())).build();
     }
 
