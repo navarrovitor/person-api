@@ -1,6 +1,5 @@
 package navarro.vitor.personapi.dto.request;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -11,7 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import navarro.vitor.personapi.entity.Phone;
 
 @Data
 @Builder
@@ -32,9 +30,9 @@ public class PersonDTO {
   @Size(min = 9, max = 9)
   private String ssn;
 
-  private LocalDate birthDate;
+  private String birthDate;
 
   @Valid
   @NotEmpty
-  private List<Phone> phones;
+  private List<PhoneDTO> phones;
 }
